@@ -1,0 +1,46 @@
+{
+  "kind": "feature_evidence_report",
+  "features": [
+    {
+      "featureId": "feature-verify-all-existing-frontend-components-render-correctly-with-the-current-backend-actor-implementation",
+      "featureTitle": "Verify all existing frontend components render correctly with the current backend actor implementation",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BaleEntryForm.tsx",
+        "frontend/src/components/BaleRecordsTable.tsx",
+        "frontend/src/components/Header.tsx",
+        "frontend/src/components/StatisticsCards.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-8"
+      ],
+      "confidence": "high"
+    },
+    {
+      "featureId": "feature-verify-the-frontend-successfully-connects-to-the-backend-actor-using-the-generated-declarations",
+      "featureTitle": "Verify the frontend successfully connects to the backend actor using the generated declarations",
+      "files": [
+        "frontend/src/App.tsx",
+        "frontend/src/components/BaleEntryForm.tsx"
+      ],
+      "components": [
+        "core-infrastructure@1.0.2",
+        "shadcn-ui@1.0.0",
+        "build-template-react@1.0.0",
+        "initial-app@1.0.0",
+        "github-export-icp-cli@1.0.0"
+      ],
+      "testIds": [
+        "REQ-10"
+      ],
+      "confidence": "high"
+    }
+  ]
+}

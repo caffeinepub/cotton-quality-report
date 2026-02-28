@@ -1,0 +1,19 @@
+{
+  "backend/main.mo": "Motoko actor implementing a simple bale management system with CRUD operations (addBale, toggleAngry, getBale, getAllBales, angryBaleCount) using a Map-based store with auto-incrementing IDs.",
+  "feature_evidence.json": "Feature evidence report documenting two high-confidence features: frontend component rendering verification and frontend-backend connection verification via generated declarations.",
+  "frontend-file-summaries.txt": "JSON summary of frontend files describing the cotton quality reporting dashboard components, hooks, and styling with print functionality.",
+  "frontend/index.css": "Tailwind CSS configuration with OKLCH color system defining light and dark theme variables for a neutral agricultural-themed UI.",
+  "frontend/index.html": "HTML entry point with root div and module script reference to main.tsx for the Cotton Quality Report application.",
+  "frontend/src/App.tsx": "Main React application component orchestrating the cotton quality dashboard with header, form, statistics, table, print functionality, and footer with social links.",
+  "frontend/src/components/BaleEntryForm.tsx": "Form component with six numeric inputs (Rd, Trash, Moisture, Micronaire, Length, Strength) that validates and submits JSON-encoded quality metrics to the backend via useAddBale mutation.",
+  "frontend/src/components/BaleRecordsTable.tsx": "Sortable table component displaying bale records with parsed quality metrics, supporting column-based sorting and print-optimized styling.",
+  "frontend/src/components/Header.tsx": "Header component displaying report title, lot reference, current date, and completion status badge that turns green when 100 bales are entered.",
+  "frontend/src/components/StatisticsCards.tsx": "Statistics dashboard component calculating and displaying average values for Micronaire, Length, Strength, and Trash percentage across all bales with parsed JSON metrics.",
+  "frontend/src/hooks/useActor.ts": "Custom React hook that manages the backend actor instance using React Query, creating authenticated or anonymous actors based on Internet Identity state and invalidating dependent queries when the actor changes.",
+  "frontend/src/hooks/useInternetIdentity.ts": "React context provider and hook for Internet Identity authentication, managing login state, identity persistence, and providing login/logout functionality with configurable AuthClient options.",
+  "frontend/src/hooks/useQueries.ts": "Custom React Query hooks for fetching all bales (useGetAllBales) and adding new bales (useAddBale) through the backend actor, with automatic cache invalidation on mutations.",
+  "frontend/src/index.css": "Tailwind CSS configuration with custom CSS variables for light/dark theme colors using OKLCH color space, plus print-specific media queries for report generation styling.",
+  "frontend/src/main.tsx": "Application entry point that sets up React root with QueryClientProvider and InternetIdentityProvider wrappers around the main App component.",
+  "frontend/tailwind.config.js": "Tailwind CSS configuration defining custom color tokens using OKLCH, container settings, border radius variables, animations, and plugins for typography, container queries, and animations.",
+  "project_state.json": "Project metadata tracking implemented features for a cotton quality reporting application including bale entry forms, statistics display, sortable tables, print functionality, and backend integration status."
+}

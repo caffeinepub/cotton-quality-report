@@ -1,0 +1,9 @@
+{
+  "frontend/src/App.tsx": "Main application component that orchestrates the cotton quality reporting dashboard with header, form, statistics, table, and footer sections including print functionality.",
+  "frontend/src/components/Header.tsx": "Header component displaying the report title, lot reference, current date, and completion status badge that turns green when 100 bales are entered.",
+  "frontend/src/components/BaleEntryForm.tsx": "Form component with six numeric input fields for entering cotton quality metrics (Rd, Trash %, Moisture %, Micronaire, Length, Strength) that encodes data as JSON for backend storage.",
+  "frontend/src/components/StatisticsCards.tsx": "Statistics dashboard component that calculates and displays average values for Micronaire, Length, Strength, and Trash percentage across all entered bales.",
+  "frontend/src/components/BaleRecordsTable.tsx": "Sortable table component displaying all bale records with quality metrics, supporting column sorting and print-optimized styling.",
+  "frontend/src/hooks/useQueries.ts": "React Query hooks for backend integration including useGetAllBales for fetching bale data and useAddBale mutation for creating new records.",
+  "frontend/src/index.css": "Global styles with OKLCH color system for neutral agricultural theme, including comprehensive print media queries for clean report output."
+}

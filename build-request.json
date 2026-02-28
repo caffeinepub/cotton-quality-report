@@ -1,0 +1,76 @@
+{
+  "kind": "build_request",
+  "title": "Retry deployment after previous failure",
+  "projectName": "Cotton Quality Report",
+  "priority": "normal",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "text": "Verify all existing frontend components render correctly with the current backend actor implementation",
+      "target": "both",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ],
+        "quotes": [
+          "Please try"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The bale entry form displays all six input fields (Rd, Trash %, Moisture %, Micronaire, Length, Strength)",
+        "Statistics cards show calculated averages for the quality metrics",
+        "The bale records table renders with all columns",
+        "The header displays the lot reference and current date",
+        "The print functionality works without errors"
+      ]
+    },
+    {
+      "id": "REQ-9",
+      "text": "Ensure the Motoko backend actor compiles successfully and exposes all required public methods for bale management",
+      "target": "backend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The backend actor compiles without errors",
+        "Public methods for adding bales are accessible from the frontend",
+        "Public methods for retrieving all bales are accessible from the frontend",
+        "The actor can be deployed to the Internet Computer successfully"
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "text": "Verify the frontend successfully connects to the backend actor using the generated declarations",
+      "target": "frontend",
+      "source": {
+        "messageIds": [
+          "msg-latest"
+        ]
+      },
+      "acceptanceCriteria": [
+        "The frontend can import and use the backend actor declarations",
+        "API calls to the backend complete without connection errors",
+        "The useActor hook successfully establishes the connection",
+        "Data submitted through the form reaches the backend"
+      ]
+    }
+  ],
+  "constraints": [
+    "Do not modify the immutable frontend paths (useInternetIdentity.ts, useInternetIdentity.tsx, useActor.ts, main.tsx, components/ui)",
+    "Maintain the single-actor backend architecture",
+    "Preserve all existing features and functionality",
+    "Keep the agricultural/industrial visual theme with neutral colors"
+  ],
+  "nonGoals": [
+    "Adding new features beyond existing requirements",
+    "Changing the technology stack",
+    "Modifying the data model structure",
+    "Implementing authentication at this stage"
+  ],
+  "imageRequirements": {
+    "required": [],
+    "edits": []
+  }
+}

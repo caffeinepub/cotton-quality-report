@@ -1,0 +1,59 @@
+{
+  "kind": "spec_vs_diff_report",
+  "version": "1.0",
+  "generatedAt": "2026-02-23T11:01:01.644Z",
+  "summary": "The diff implements a complete cotton quality reporting application with frontend components and backend actor. However, there is a critical mismatch: the backend actor implements a simple 'angry bale' demo structure (with id, description, isAngry fields) instead of the required cotton quality metrics structure (Rd, Trash%, Moisture%, Micronaire, Length, Strength). The frontend compensates by encoding quality metrics as JSON in the description field, which is a workaround rather than proper implementation. All frontend components are present and appear functionally correct for displaying quality metrics.",
+  "missing_requirements": [
+    {
+      "id": "REQ-9",
+      "requirement": "Backend actor must expose proper data structure for bale quality metrics (Rd, Trash%, Moisture%, Micronaire, Length, Strength)",
+      "reason": "The backend Bale type only has id, description, and isAngry fields. Quality metrics are being encoded as JSON strings in the description field rather than having dedicated typed fields. The backend should have a proper Bale type with all six quality metric fields as numbers.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    }
+  ],
+  "hallucinated_features": [
+    {
+      "description": "Toggle angry state functionality for bales",
+      "reason": "The backend includes a toggleAngry method and isAngry field that were not requested in any requirement. The BuildRequest is about cotton quality metrics tracking, not emotional states of bales.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Angry bale count query method",
+      "reason": "The backend includes an angryBaleCount method that was not requested and is unrelated to cotton quality reporting requirements.",
+      "evidence": [
+        "backend/main.mo"
+      ]
+    },
+    {
+      "description": "Social media footer links (X/Twitter, GitHub)",
+      "reason": "The App.tsx includes social media icon links in the footer that were not requested in any requirement. The BuildRequest only mentions preserving existing features, not adding social links.",
+      "evidence": [
+        "frontend/src/App.tsx"
+      ]
+    }
+  ],
+  "confidence": 0.92,
+  "changed_files": [
+    "all_files_summary.json",
+    "backend/main.mo",
+    "frontend-file-summaries.txt",
+    "frontend/index.css",
+    "frontend/index.html",
+    "frontend/src/App.tsx",
+    "frontend/src/components/BaleEntryForm.tsx",
+    "frontend/src/components/BaleRecordsTable.tsx",
+    "frontend/src/components/Header.tsx",
+    "frontend/src/components/StatisticsCards.tsx",
+    "frontend/src/hooks/useActor.ts",
+    "frontend/src/hooks/useInternetIdentity.ts",
+    "frontend/src/hooks/useQueries.ts",
+    "frontend/src/index.css",
+    "frontend/src/main.tsx",
+    "frontend/tailwind.config.js",
+    "project_state.json"
+  ]
+}

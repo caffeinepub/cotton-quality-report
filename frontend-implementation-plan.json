@@ -1,0 +1,67 @@
+{
+  "kind": "implementation_plan",
+  "version": "1.0",
+  "title": "Retry deployment after previous failure",
+  "requirements": [
+    {
+      "id": "REQ-8",
+      "summary": "Verify all existing frontend components render correctly with the current backend actor implementation",
+      "acceptanceCriteria": [
+        "The bale entry form displays all six input fields (Rd, Trash %, Moisture %, Micronaire, Length, Strength)",
+        "Statistics cards show calculated averages for the quality metrics",
+        "The bale records table renders with all columns",
+        "The header displays the lot reference and current date",
+        "The print functionality works without errors"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Update the App component to handle the backend interface mismatch by adapting the data flow between the backend actor's Bale type (id, description, isAngry) and the frontend's expected cotton quality data structure. Add error handling for backend connection and data transformation logic to ensure components receive data in the expected format."
+        },
+        {
+          "path": "frontend/src/components/BaleEntryForm.tsx",
+          "operation": "modify",
+          "description": "Review and update the BaleEntryForm component to ensure all six input fields (Rd, Trash %, Moisture %, Micronaire, Length, Strength) are properly rendered and that form submission integrates with the backend actor's addBale method through proper data transformation. Verify the component handles the backend response correctly."
+        },
+        {
+          "path": "frontend/src/components/StatisticsCards.tsx",
+          "operation": "modify",
+          "description": "Update the StatisticsCards component to correctly calculate and display averages for quality metrics using data retrieved from the backend actor via getAllBales. Ensure the component gracefully handles empty states and data transformation from the backend Bale format."
+        },
+        {
+          "path": "frontend/src/components/BaleRecordsTable.tsx",
+          "operation": "modify",
+          "description": "Verify and update the BaleRecordsTable component to render all columns correctly with data from the backend actor. Ensure proper data transformation from the backend Bale type to the expected quality metrics display format. Add error handling for data retrieval failures."
+        },
+        {
+          "path": "frontend/src/components/Header.tsx",
+          "operation": "modify",
+          "description": "Verify the Header component correctly displays the lot reference and current date. Ensure proper date formatting and that all static content renders without errors. Add any missing error boundaries if needed."
+        }
+      ]
+    },
+    {
+      "id": "REQ-10",
+      "summary": "Verify the frontend successfully connects to the backend actor using the generated declarations",
+      "acceptanceCriteria": [
+        "The frontend can import and use the backend actor declarations",
+        "API calls to the backend complete without connection errors",
+        "The useActor hook successfully establishes the connection",
+        "Data submitted through the form reaches the backend"
+      ],
+      "file_operations": [
+        {
+          "path": "frontend/src/App.tsx",
+          "operation": "modify",
+          "description": "Add comprehensive error handling and connection verification for the backend actor integration. Implement loading states and error boundaries to catch and display connection issues. Verify the useActor hook is properly initialized and that all backend method calls (addBale, getAllBales) handle async operations correctly with appropriate try-catch blocks."
+        },
+        {
+          "path": "frontend/src/components/BaleEntryForm.tsx",
+          "operation": "modify",
+          "description": "Implement proper async handling for form submission to verify data reaches the backend through the addBale method. Add loading indicators during submission, success/error feedback messages, and form validation. Ensure the component properly awaits the backend response and handles any connection errors gracefully."
+        }
+      ]
+    }
+  ]
+}

@@ -1,0 +1,137 @@
+{
+  "schemaVersion": "1.0.0",
+  "projectStateVersion": 5,
+  "summary": "Cotton quality reporting application for tracking and certifying 100-bale lots with quality metrics (Rd, trash, moisture, micronaire, length, strength)",
+  "architectural_notes": [
+    "Single-page HTML application with vanilla JavaScript",
+    "Client-side data storage using array (no persistence)",
+    "Chart.js library included but not yet implemented",
+    "Responsive dashboard layout with 4-column stats grid",
+    "Print-specific CSS media queries for report generation"
+  ],
+  "known_issues": [
+    "No data persistence - all bale data lost on page refresh",
+    "Chart.js included but no charts implemented yet",
+    "No validation for reasonable value ranges on quality metrics",
+    "No ability to edit or delete entered bale records"
+  ],
+  "isFixRequest": false,
+  "existing_features": [
+    {
+      "id": "feature-implement-a-bale-entry-form-with-six-numeric-input-fields-rd-trash-moisture-micronaire-mic-length-mm-and-strength-g-tex",
+      "title": "Implement a bale entry form with six numeric input fields: Rd, Trash %, Moisture %, Micronaire (Mic), Length (mm), and Strength (g/tex)",
+      "reqIds": [
+        "REQ-2"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-real-time-statistics-showing-average-micronaire-average-length-mm-average-strength-g-tex-and-average-trash-across-all-entered-bales-in-stat-cards",
+      "title": "Display real-time statistics showing average Micronaire, average Length (mm), average Strength (g/tex), and average Trash % across all entered bales in stat cards",
+      "reqIds": [
+        "REQ-3"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-render-a-sortable-table-displaying-all-entered-bale-records-with-columns-for-bale-rd-trash-moisture-mic-length-mm-and-strength-g-tex-with-newest-bales-appearing-first",
+      "title": "Render a sortable table displaying all entered bale records with columns for Bale #, Rd, Trash %, Moisture %, Mic, Length (mm), and Strength (g/tex), with newest bales appearing first",
+      "reqIds": [
+        "REQ-4"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-display-a-header-section-showing-cotton-quality-report-title-lot-reference-100-bale-insp-2026-current-date-and-lot-status-that-changes-from-incomplete-to-completed-in-green-when-100-bales-are-entered",
+      "title": "Display a header section showing 'COTTON QUALITY REPORT' title, lot reference '100-BALE-INSP-2026', current date, and lot status that changes from 'Incomplete' to 'COMPLETED' in green when 100 bales are entered",
+      "reqIds": [
+        "REQ-5"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-implement-print-functionality-that-shows-a-clean-report-layout-hiding-the-input-form-and-print-button-when-printing-with-optimized-styling-for-printed-output",
+      "title": "Implement print functionality that shows a clean report layout hiding the input form and print button when printing, with optimized styling for printed output",
+      "reqIds": [
+        "REQ-6"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-apply-a-professional-agricultural-industrial-visual-theme-with-clean-dashboard-layout-featuring-a-neutral-color-palette-avoiding-blue-and-purple-subtle-borders-card-based-statistics-display-and-clear-data-hierarchy-suitable-for-quality-inspection-reporting",
+      "title": "Apply a professional agricultural/industrial visual theme with clean dashboard layout featuring a neutral color palette (avoiding blue and purple), subtle borders, card-based statistics display, and clear data hierarchy suitable for quality inspection reporting",
+      "reqIds": [
+        "REQ-7"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-all-existing-frontend-components-render-correctly-with-the-current-backend-actor-implementation",
+      "title": "Verify all existing frontend components render correctly with the current backend actor implementation",
+      "reqIds": [
+        "REQ-8"
+      ],
+      "version": 1
+    },
+    {
+      "id": "feature-verify-the-frontend-successfully-connects-to-the-backend-actor-using-the-generated-declarations",
+      "title": "Verify the frontend successfully connects to the backend actor using the generated declarations",
+      "reqIds": [
+        "REQ-10"
+      ],
+      "version": 1
+    }
+  ],
+  "new_feature_requests": [
+    {
+      "id": "AR-1",
+      "summary": "Bale data entry form with 6 quality metrics",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-2",
+      "summary": "Real-time calculation of average quality metrics across all bales",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-3",
+      "summary": "Dynamic table displaying all entered bale records",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-4",
+      "summary": "Print-friendly report layout with print button",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-5",
+      "summary": "Status tracking showing completion when 100 bales are entered",
+      "reqIds": [],
+      "status": "pending"
+    },
+    {
+      "id": "AR-6",
+      "summary": "Create a Motoko backend actor to store and manage cotton bale records with fields: id (Nat), rd (Float), trash (Float), moist (Float), mic (Float), len (Float), and str (Float)",
+      "reqIds": [
+        "REQ-1"
+      ],
+      "status": "pending"
+    },
+    {
+      "id": "AR-8",
+      "summary": "Ensure the Motoko backend actor compiles successfully and exposes all required public methods for bale management",
+      "reqIds": [
+        "REQ-9"
+      ],
+      "status": "pending"
+    }
+  ],
+  "gameProjectType": "none",
+  "projectName": "Cotton Quality Report",
+  "clarification_mode": "instant",
+  "clarification_rounds": 0
+}
